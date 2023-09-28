@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="/static/styles.css" rel="stylesheet">
+        <title>Birthdays</title>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Birthdays</h1>
+        </div>
+        <div class="container">
+            <div class="section">
+
+                <h2>Add a Birthday</h2>
+
+                <form action = "/" method = "POST">
+                    <input type = "text" name = "name" placeholder = "Name" >
+                    <input type = "number" name = "day" placeholder = "Day" >
+                    <input type = "number" name = "month" placeholder = "Month" >
+                    <input type = "submit" value = "Add!">
+               </form>
+
+            </div>
+
+            <div class="section">
+
+                <h2>All Birthdays</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Birthday</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        {% for entry in entries %}
+                            <tr>
+                                <td> {{ entry.name }} </td>
+                                <td> {{ entry.day }} / {{ entry.month }} </td>
+                                <td>
+
+                                    <form action = "/deregister" method = "POST">
+                                        <input type = "hidden" name = "id" value = "{{ entry.id }}">
+                                        <input type = "submit" value = "Delete">
+                                    </form>
+
+                                </td>
+                            </tr>
+                        {% endfor %}
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>

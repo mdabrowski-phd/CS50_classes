@@ -1,0 +1,15 @@
+Times:
+
+10 simulations: 0m0.022s
+100 simulations: 0m0.024s
+1000 simulations: 0m0.028s
+10000 simulations: 0m0.088s
+100000 simulations: 0m0.678s
+1000000 simulations: 0m6.911s
+
+Questions:
+
+Which predictions, if any, proved incorrect as you increased the number of simulations?: for N < 1000 some teams are not placed in the dictionary (never won) thus the results are not complete
+
+Suppose you're charged a fee for each second of compute time your program uses.
+After how many simulations would you call the predictions "good enough"?: for N = 1000 as for langer N the list is stale enough but the computations longer
